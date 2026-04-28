@@ -195,11 +195,12 @@ async function fetchVehicles() {
     if (filters.type) params.type = filters.type
     const res = await getVehicles(params)
     vehicles.value = res.data?.records || []
-    await nextTick()
-    initScrollReveal()
   } catch (e) {
     console.error('获取车辆列表失败:', e)
-  } finally { loading.value = false }
+  }
+  loading.value = false
+  await nextTick()
+  initScrollReveal()
 }
 
 const scrollTo = (id) => { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }) }

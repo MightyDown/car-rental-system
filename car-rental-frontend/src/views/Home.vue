@@ -257,9 +257,10 @@ async function fetchVehicles() {
         ? 'linear-gradient(135deg, rgba(118,75,162,0.08) 0%, rgba(118,75,162,0.02) 100%)'
         : 'linear-gradient(135deg, rgba(102,126,234,0.08) 0%, rgba(102,126,234,0.02) 100%)',
     }))
-    await nextTick()
-    initScrollReveal()
-  } catch (e) { console.error('获取首页车辆失败:', e) } finally { loadingVehicles.value = false }
+  } catch (e) { console.error('获取首页车辆失败:', e) }
+  loadingVehicles.value = false
+  await nextTick()
+  initScrollReveal()
 }
 
 const features = [
