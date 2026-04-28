@@ -131,15 +131,6 @@ npm run build
 
 前端开发服务器已配置 API 代理，`/api` 请求自动转发到 `http://localhost:8080`。
 
-### 4. 访问
-
-| 地址 | 说明 |
-|---|---|
-| http://localhost:5173 | 用户端首页 |
-| http://localhost:5173/login | 用户登录 |
-| http://localhost:5173/register | 用户注册 |
-| http://localhost:5173/dashboard | 管理控制台（需管理员账号） |
-
 ## 默认账号
 
 系统启动后自动初始化以下测试数据：
