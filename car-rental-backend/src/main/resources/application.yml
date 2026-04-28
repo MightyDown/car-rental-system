@@ -1,0 +1,32 @@
+# ==================== 应用配置 ====================
+spring:
+  application:
+    name: car-rental-backend
+
+  # 默认激活 dev 环境
+  profiles:
+    active: dev
+
+  # Jackson 日期格式化
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+    serialization:
+      write-dates-as-timestamps: false
+
+# ==================== 服务器配置 ====================
+server:
+  port: 8080
+
+# ==================== JWT 配置 ====================
+jwt:
+  secret: ${JWT_SECRET:changeme}
+  expiration: 86400000  # 24小时（毫秒）
+
+# ==================== CORS 配置 ====================
+cors:
+  allowed-origins: http://localhost:5173,http://localhost:3000
+
+# ==================== 业务配置 ====================
+biz:
+  max-advance-booking-days: 30   # 最长可提前预订天数
